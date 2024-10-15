@@ -2,6 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Feather } from '@expo/vector-icons'
 import { PropsStackRoutes } from './interfaces'
+import Home from '../screens/Home'
 
 const Stack = createNativeStackNavigator<PropsStackRoutes>()
 const Tab = createBottomTabNavigator<PropsStackRoutes>()
@@ -15,8 +16,8 @@ const AppNavigation = () => {
         tabBarIcon: ({ color, size }) => {
           let iconName: keyof typeof Feather.glyphMap
 
-          if (route.name === 'Dir') {
-            iconName = 'folder'
+          if (route.name === 'Home') {
+            iconName = 'circle'
           } else if (route.name === 'Settings') {
             iconName = 'settings'
           } else {
@@ -31,11 +32,7 @@ const AppNavigation = () => {
         }
       })}
     >
-      <Tab.Screen
-        name="{MeuComponente}"
-        component={MeuComponent}
-        options={{ headerShown: false }}
-      />
+      <Tab.Screen name="Home" component={Home} options={{ headerShown: false }} />
     </Tab.Navigator>
   )
 }
