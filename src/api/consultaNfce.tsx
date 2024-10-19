@@ -33,7 +33,6 @@ async function consultarNFCe(url: string) {
     let startCnpj = data.indexOf('CNPJ:')
     let startCupom = data.indexOf('<span class="chave">')
 
-    console.log(data)
     //DADOS DOS ITEMS
     while (startNome !== -1 && startCodigo !== -1) {
       const endOthers = data.indexOf('</span>', startNome)

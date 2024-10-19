@@ -17,7 +17,9 @@ const AppNavigation = () => {
           let iconName: keyof typeof Feather.glyphMap
 
           if (route.name === 'Home') {
-            iconName = 'circle'
+            iconName = 'bookmark'
+          } else if (route.name === 'Settings') {
+            iconName = 'settings'
           } else if (route.name === 'Settings') {
             iconName = 'settings'
           } else {
